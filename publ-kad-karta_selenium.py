@@ -71,7 +71,6 @@ while kn < len(sheet1):
 
     while 1:  
         try:
-
             driver.get(url)
             break 
         except Exception as exc:
@@ -143,9 +142,6 @@ while kn < len(sheet1):
         tip_obj=tip_obj.replace('\n','|')
         print(tip_obj)    
 
-
-
-
     kadnum=re.search(r"Кадастровый номер\n.*",info)
     if kadnum==None:
         kadnum='Кадастровый номер|'+str(kadnumber)
@@ -186,13 +182,6 @@ while kn < len(sheet1):
         kateg_zem=kateg_zem.replace('\n','|')
         print(kateg_zem)
     
-
-    
-
-
-
-
-
     ploshad=re.search(r"Площадь.*\n.*",info)
     if ploshad==None:
         ploshad='Площадь.|-'  
@@ -203,7 +192,6 @@ while kn < len(sheet1):
         ploshad=ploshad.replace('\n','|')
         print(ploshad)
 
-
     razr_isp=re.search(r"Разрешенное.*\n.*",info)
     if razr_isp==None:
         razr_isp='Разрешенное использование|-'
@@ -213,7 +201,6 @@ while kn < len(sheet1):
         info=info.replace(re.search(r"Разрешенное.*",info).group(0),'')
         razr_isp=razr_isp.replace('\n','|')
         print(razr_isp)
-
 
     ed_izmer=re.search(r"Единица измерения.*\n.*",info)
     if ed_izmer==None:
@@ -385,15 +372,10 @@ while kn < len(sheet1):
         inoi_nomer=inoi_nomer.replace('\n','|')
         print(inoi_nomer)     
 
-    
-    
     itog_info=tip_nedvizh+'|'+kadnum+'|'+status+'|'+data_post+'|'+kateg_zem+'|'+razr_isp+'|'+ploshad+'|'+ed_izmer+'|'+kad_stoim+'|'+data_vnesen_stoim+'|'+data_utver_stoim+'|'+data_opred_stoim+'|'+adres+'|'+tip+'|'+etazh+'|'+podz_etazh+'|'+stena+'|'+zaversh_stroit+'|'+data_obnov_inf+'|'+predv_rasch_naloga+'|'+invent_nomer_1+'|'+invent_nomer_2+'|'+uslov_nomer+'|'+inoi_nomer+'|'+tip_obj+'|'+all_info+'|'+koordinaty_link+'|'+koordinaty
 
     with open ('text ЗУ.txt','a',encoding='utf-8') as tmp:
         tmp.write(itog_info+'\n')
-
-        
-
 
     kn=kn+1
     #print('-+-+-+-+-+-+-+-+-+-+-')
